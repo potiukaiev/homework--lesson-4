@@ -1,0 +1,154 @@
+
+/*GENERAL*/
+
+body * {
+	box-sizing: border-box;
+	padding: 0px;
+}
+
+img {
+	width: auto;
+	max-width: 100%;
+}
+
+main{
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+/*CUBES*/
+
+.cubes {
+	min-height: 100vh;
+	position: relative;
+	cursor: pointer;
+}
+
+.cube {
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	top: 100px;
+	left: 100px;
+	border: 3px double yellow;
+	transition: .3s;
+	background: url("img/space-background.jpg") no-repeat center;
+}
+
+.cube-one {
+	z-index: 5;
+}
+.cube-one:hover {
+	height: 200px;
+	width: 200px;
+	top: 200px;
+	left: 200px;
+}
+
+.cube-two {
+	transform: rotate(15deg);
+	opacity: .7;
+	z-index: 4;
+}
+
+.cube-three {
+	transform: rotate(30deg);
+	opacity: .5;
+	z-index: 3;
+}
+
+.cube-four {
+	transform: rotate(45deg);
+	opacity: .3;
+	z-index: 2;
+}
+
+.cube-two:hover {
+	transform: rotate(25deg);
+}
+
+.cube-three:hover {
+	transform: rotate(40deg);
+}
+
+.cube-four:hover {
+	transform: rotate(55deg);
+}
+
+/*SIDEBARS*/
+.side-bar-common{
+	position: relative;
+	overflow: hidden;
+	width: 5%;
+	transition: .5s;
+	background-color: #464646;
+	min-height: 100vh;
+	border: 2px solid gray;
+}
+
+
+.side-bar-common:hover{
+	width: 30%;
+}
+
+.side-bar-items-wrapper{
+	position: absolute;
+	left: -200px;
+	transition: 1s;
+	padding: 50px 0 0 50px;
+}
+.side-bar-common:hover .side-bar-items-wrapper{
+	left: 0px;
+}
+
+
+.side-bar-item{
+	padding-bottom: 20px;
+	color: white;
+	padding: 10px;
+	text-decoration: none;
+	display: block;
+	transition: .2s;
+}
+.side-bar-item::before {
+	content: "";
+	display: inline-block;
+	height: 5px;
+	width: 5px;
+	background-color: red;
+	border: 1px solid black;
+	transform: rotate(45deg);
+	margin-right: 10px; 
+}
+
+.side-bar-item:hover{
+	background-color: orange;
+}
+
+
+
+@media (min-width: 1200px) {
+	.second-side-bar{
+		min-height: 10vh;
+		width: 100%;
+		padding: 0px;
+	}
+	.second-side-bar:hover{
+		width: 100%;
+	}
+	.second-side-bar .side-bar-items-wrapper{
+		padding: 25px;
+		width: 800px;
+		margin: 0 auto;
+		position: static;
+	}
+		.second-side-bar .side-bar-item{
+		display: inline-block;
+	}
+		.second-side-bar .side-bar-item::before{
+		display: none;
+	}
+		.wrapper{
+		min-height: 100vh; 
+	}
+}
