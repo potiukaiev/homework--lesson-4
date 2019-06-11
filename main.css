@@ -20,59 +20,79 @@ main{
 
 .cubes {
 	min-height: 100vh;
-	position: relative;
-	cursor: pointer;
+	position: relative;	
 }
 
-.cube {
+.cube{
 	position: absolute;
 	width: 400px;
 	height: 400px;
-	top: 100px;
-	left: 100px;
 	border: 3px double yellow;
 	transition: .3s;
 	background: url("img/space-background.jpg") no-repeat center;
 }
+.cube-wrapper {
+	background: none;
+	border: none;
+	top: 20%;
+	left: 20%;
+	cursor: pointer;
+}
+.cube-wrapper-one{
+	z-index: 5;
+}
+.cube-wrapper-two{
+	z-index: 4;
+	transform: rotate(15deg);
+}
+.cube-wrapper-three{
+	z-index: 3;
+	transform: rotate(30deg);
+}
+.cube-wrapper-four{
+	z-index: 2;
+	transform: rotate(45deg);
+}
+.cube-wrapper:hover .cube-one {
+	height: 200px;
+	width: 200px;
+	top: 100px;
+	left: 100px;
+}
 
 .cube-one {
 	z-index: 5;
+	top: 0;
+	left: 0;
 }
-.cube-one:hover {
-	height: 200px;
-	width: 200px;
-	top: 200px;
-	left: 200px;
-}
-
 .cube-two {
-	transform: rotate(15deg);
+
 	opacity: .7;
 	z-index: 4;
 }
 
 .cube-three {
-	transform: rotate(30deg);
+
 	opacity: .5;
 	z-index: 3;
 }
 
 .cube-four {
-	transform: rotate(45deg);
+
 	opacity: .3;
 	z-index: 2;
 }
 
-.cube-two:hover {
-	transform: rotate(25deg);
+.cube-wrapper-two:hover .cube-two {
+	transform: rotate(10deg);
 }
 
-.cube-three:hover {
-	transform: rotate(40deg);
+.cube-wrapper-three:hover .cube-three {
+	transform: rotate(10deg);
 }
 
-.cube-four:hover {
-	transform: rotate(55deg);
+.cube-wrapper-four:hover .cube-four {
+	transform: rotate(10deg);
 }
 
 /*SIDEBARS*/
